@@ -1,0 +1,23 @@
+apple_binary(
+name = 'main',
+headers = [
+    'AppDelegate.h',
+    'ViewController.h'
+    ],
+srcs = [
+    'main.m',
+    'AppDelegate.m',
+    'ViewController.m'
+    ],
+frameworks = [
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework'
+    ],
+)
+
+apple_bundle(
+name = 'app',
+binary = ':main',
+extension = 'app',
+info_plist = 'Info.plist'
+)
